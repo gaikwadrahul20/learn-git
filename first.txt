@@ -1,3 +1,1 @@
-This is my first commit. Check without -c.
-This is my first commit. Check without -a.
-Check without -c.
+This is my first commit
