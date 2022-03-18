@@ -32,10 +32,15 @@ git commit -am "this is message"
 ```
 git log
 ```
+
 ### stash all the uncommited changes tracked changes
 stash changes - `git stash`
 get stash back `git pop`
 cleared stashed changes `git stash clear`
-```
 
+### Adding remote URLs
+check/list remote  urls `git remote -v`
+add remote URL to as alias origin `git remote add origin link`
+
+Branches?
 git restore/reset?
