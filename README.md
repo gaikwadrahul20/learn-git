@@ -32,10 +32,10 @@ git commit -am "this is message"
 ```
 git log
 ```
-### stash all the uncommited changes
-```
-git stash
-
+### stash all the uncommited changes tracked changes
+stash changes - `git stash`
+get stash back `git pop`
+cleared stashed changes `git stash clear`
 ```
 
 git restore/reset?
