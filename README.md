@@ -42,8 +42,18 @@ cleared stashed changes `git stash clear`
 check/list remote  urls `git remote -v`
 add remote URL to as alias origin `git remote add origin link`
 
-Branches?
-git restore/reset?
-upstream create fetch
-remoing commit using squash
-squash/rebase
+
+### Branches
+Create branch: `git branch name`
+Switch branch: `git checkout name`
+Create and switch branch `git checkout -b  name`
+
+> If you create branch in github it will automatically push to that branch using `git push`
+> 
+> If branch is created in local using `git checkout -b name`, the uptream is not setand need to push with `git push origin branch`
+
+
+Fetch vs pull
+Upstream create fetch
+Squash/rebase - commit
+git restore/reset 
