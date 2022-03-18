@@ -44,3 +44,6 @@ add remote URL to as alias origin `git remote add origin link`
 
 Branches?
 git restore/reset?
+upstream create fetch
+remoing commit using squash
+squash/rebase
