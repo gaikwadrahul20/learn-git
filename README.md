@@ -74,4 +74,10 @@ Push changes to origin branch: `git push origin branch name`
  - `git rebase -i commit_id_till_you_want_to_merge`
  - pick with p and squash with s
  - Add commit messages by deleting previous commit messages
-Git restore/reset 
+ - Might have to force push
+
+### Reset/Revert
+ - Reset reverses the local change and then need to push
+ - `git reset commit_id` 
+ - Reset reverses the local change and then need to push
+ - `git revert commit_id`
