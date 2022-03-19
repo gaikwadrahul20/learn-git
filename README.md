@@ -1,83 +1,119 @@
 # Notes-Learn git and github
 
 ### Current status of git
-
 ```
 git status
 ```
 
-### add/stage newly created files to git to track
+***
+
+### Add/stage newly created/modified files
 ```
 git add file_names
 git add .
 ```
-### Commit changes to local
-#### commit staged changes
+
+***
+
+### Commit changes
+* **Commit staged changes**
 ```
 git commit -m "this is message"
-
 ```
-#### commit unstaged but tracked changes 
+* **Commit unstaged but tracked changes**
 ```
 git commit -am "this is message"
-
 ```
 > Major difference between using -am and -m in commit is
 > 
-> 1. When you perform git add for new file, the changes are already staged and you dont need to add -a
+> - **When you perform git add for new file, the changes are already staged and you dont need to add -a**
 > 
-> 1. When you change the file you can directly use `git commit -am`
+> - **If files are only modified (not added/deleted) then use:** `git commit -am "_msg_"`
 
-### check logs of commits/ history of commits
+***
+
+### Check logs/hostory of commits
 ```
 git log
 ```
 
-### stash all the uncommited changes tracked changes
-stash changes - `git stash`
-get stash back `git pop`
-cleared stashed changes `git stash clear`
+***
+
+### Stash all the uncommited changes tracked changes
+- **Stash changes:** `git stash`
+- **Get changes from stash:** `git stash pop`
+- **Delete changes from stash:** `git stash clear`
+
+***
 
 ### Adding remote URLs
-check/list remote  urls `git remote -v`
-add remote URL to as alias origin `git remote add origin link`
+- **Check/list remote  urls:** `git remote -v`
+- **Add remote URL (as alias origin):** `git remote add origin _link_`
 
+***
 
 ### Branches
-Create branch: `git branch name`
-Switch branch: `git checkout name`
-Create and switch branch `git checkout -b  name`
+- **Create branch:** `git branch name`
+- **Switch branch:** `git checkout name`
+- **Create and switch branch:** `git checkout -b  name`
 
-> If you create branch in github it will automatically push to that branch using `git push`
+> - If branch is created using github.com, then upstream is set automatically and can push using `git push` with out specifying branch
 > 
-> If branch is created in local using `git checkout -b name`, the uptream is not setand need to push with `git push origin branch`
+> - If branch is created in local using `git checkout -b name`, the upstream needs to be set using `--set-upstream` or need to push with `git push origin _branch_name_`
 
+***
 
 ### Fetch vs pull
-> Fetch: fetch metadata but dont get changed files in local
+
+> - **Fetch:** Fetch metadata but dont get changed files in local
 > 
-> Fetch: fetch metadata and get changed files in local
+> - **Pull:** Fetch metadata and get changed files in local
 
+- **Fetch from upstream using `git fetch`**
+> - **Fetch metadata:** `git fetch --all --prune`
+> - **Get changes to local from upstream:**  `git reset --hard upstream/main`
+> - **Push changes to origin brnach:** `git push origin branch name`
 
-### Fetch from upstream
-Fetch metadata: `git fetch --all --prune`
-Get changes to local from upstream:  `git reset --hard upstream/main`
-Push changes to origin brnach: `git push origin branch name`
+                                        or
 
-or 
+- **Fetch from upstream using `git pull`**
+> - **Get changes to local from upstream:** `git pull upstream main`
+> - **Push changes to origin branch:** `git push origin branch name`
 
-Get changes to local from upstream:: `git pull upstream main`
-Push changes to origin branch: `git push origin branch name`
+***
 
-### Squash
+### Interactive rebase or Squash
  - Combine multiple commits into 1 commit
- - `git rebase -i commit_id_till_you_want_to_merge`
- - pick with p and squash with s
+ > - `git rebase -i _commit_id_till_you_want_to_merge_`
+ - pick (select) with p and squash (delete) with s
  - Add commit messages by deleting previous commit messages
  - Might have to force push
 
+***
+
 ### Reset/Revert
- - Reset reverses the local change and then need to push
- - `git reset commit_id` 
- - Reset reverses the local change and then need to push
- - `git revert commit_id`
+ - Reset reverses the local change and then need to push (delete commit)
+ > - `git reset commit_id` 
+ - Reset reverses the local change and then need to push (create new commit on top)
+ > - `git revert HEAD`
+
+***
+
+### Future scope
+ - git cherry-pick
+ - git rebase in details
+ - git merge
+ - git stash in details
+ - Merge conflicts
+
+***
+
+### References: 
+
+**[1]** Basic: <https://youtu.be/apGV9Kg7ics> *(Completed)*
+
+**[2]** Professionals: <https://youtu.be/Uszj_k0DGsg> *(Completed)*
+
+**[3]** Advanced: <https://youtu.be/qsTthZi23VE> *(Todo)*
+
+**[4]** Branches: <https://youtu.be/e2IbNHi4uCI> *(Todo)*
